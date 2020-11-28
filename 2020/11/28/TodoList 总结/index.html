@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/10 | 小林的个人博客</title>
+  <title>小林的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="TodoList 总结 首先提醒自己时刻记住代码规范，从属关系，缩进整明白，不然自己和别人都看着烦  一、Dom~动态创建删除元素想实现这样一个功能：双击列表项能够实现对列表项的改动 思路：双击后，在列表项li里面创建一个input输入框，将列表项原本的文本内容赋给input作为默认值,再将列表项文本内容删除。用户修改input输入框里面的内容（获取焦点），用户修改完毕后（失去焦点）将input的">
+<meta property="og:type" content="article">
 <meta property="og:title" content="小林的个人博客">
-<meta property="og:url" content="http://example.com/archives/2020/10/index.html">
+<meta property="og:url" content="http://example.com/2020/11/28/TodoList%20%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="小林的个人博客">
+<meta property="og:description" content="TodoList 总结 首先提醒自己时刻记住代码规范，从属关系，缩进整明白，不然自己和别人都看着烦  一、Dom~动态创建删除元素想实现这样一个功能：双击列表项能够实现对列表项的改动 思路：双击后，在列表项li里面创建一个input输入框，将列表项原本的文本内容赋给input作为默认值,再将列表项文本内容删除。用户修改input输入框里面的内容（获取焦点），用户修改完毕后（失去焦点）将input的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-28T11:24:47.775Z">
+<meta property="article:modified_time" content="2020-11-28T11:24:20.610Z">
 <meta property="article:author" content="林得平">
 <meta name="twitter:card" content="summary">
   
@@ -150,49 +154,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TodoList 总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TodoList-总结"><a href="#TodoList-总结" class="headerlink" title="TodoList 总结"></a>TodoList 总结</h1><blockquote>
+<p>首先提醒自己时刻记住代码规范，从属关系，缩进整明白，不然自己和别人都看着烦</p>
+</blockquote>
+<h2 id="一、Dom-动态创建删除元素"><a href="#一、Dom-动态创建删除元素" class="headerlink" title="一、Dom~动态创建删除元素"></a>一、Dom~动态创建删除元素</h2><p>想实现这样一个功能：双击列表项能够实现对列表项的改动</p>
+<p>思路：双击后，在列表项li里面创建一个input输入框，将列表项原本的文本内容赋给input作为默认值,再将列表项文本内容删除。用户修改input输入框里面的内容（获取焦点），用户修改完毕后（失去焦点）将input的value值赋给列表项，再删除input</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oldhtml = element.firstChild.nodeValue;<span class="comment">//获取元素之前的内容</span></span><br><span class="line"><span class="keyword">let</span> newobj = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>);<span class="comment">//创建一个input元素</span></span><br><span class="line">newobj.type = <span class="string">&#x27;text&#x27;</span>;</span><br><span class="line">newobj.value = oldhtml;</span><br><span class="line">element.firstChild.nodeValue = <span class="string">&#x27;&#x27;</span>;<span class="comment">//设置元素内容为空</span></span><br><span class="line">element.appendChild(newobj);</span><br><span class="line"><span class="comment">//若报错Cannot read property &#x27;appendChild&#x27; of null。一般是获取的节点不存在</span></span><br><span class="line">newobj.focus()<span class="comment">//获取焦点</span></span><br><span class="line">newobj.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">element.firstChild.nodeValue = newobj.value;</span><br><span class="line">newobj.remove();</span><br></pre></td></tr></table></figure>
+
+<p>注：想让效果更好的话，要设置input的样式，另外频繁操作dom,似乎似乎会对cpu造成较大压力，具体较好的解决方法，带我学了新知识再来解决！</p>
+<h2 id="二、空格，null-undefine"><a href="#二、空格，null-undefine" class="headerlink" title="二、空格，null ,undefine"></a>二、空格，null ,undefine</h2><p>我需要判断input输入框输入的内容，来决定是否允许提交，用空格<code>todo.value ===&#39;&#39;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span>===<span class="literal">undefined</span> <span class="comment">//false</span></span><br><span class="line"><span class="literal">null</span>==<span class="literal">undefined</span><span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>)<span class="comment">//0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>)<span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>null表示一个值被定义了，是空值</p>
+<p>undefined表示缺少值，还未定义</p>
+<h2 id="三、清空"><a href="#三、清空" class="headerlink" title="三、清空"></a>三、清空</h2><p>我要实现一个清空列表项的功能</p>
+<h4 id="思路1"><a href="#思路1" class="headerlink" title="思路1."></a>思路1.</h4><blockquote>
+<p>list.remove();//<em>这种方法不好，直接删除了ol,再重新增加li就没地方增加了，应为ol都没有了</em></p>
+</blockquote>
+<h4 id="思路2"><a href="#思路2" class="headerlink" title="思路2."></a>思路2.</h4><p><em>循环删除li，也不好，因为删除一个后子节点们会重新排列，最后不能实现清空的功能</em></p>
+<h4 id="思路3"><a href="#思路3" class="headerlink" title="思路3."></a>思路3.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(list.hasChildNodes())&#123;</span><br><span class="line">    list.removeChild(list.firstChild);</span><br><span class="line">&#125;<span class="comment">//这是在网上看到的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、错误"><a href="#四、错误" class="headerlink" title="四、错误"></a>四、错误</h2><p>在写代码的过程中经常会遇到类似于<em>Cannot read property ‘appendChild’ of null</em>这样的错误，一般就是没有找到节点啥的，在这里，温习一下，页面渲染的顺序</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/08/%E6%88%91%E7%9A%84y%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-10-08T01:38:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/08/%E6%88%91%E7%9A%84y%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的y第一篇博客</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/28/TodoList%20%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/11/26/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -215,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

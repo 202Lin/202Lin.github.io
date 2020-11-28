@@ -152,6 +152,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-TodoList 总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TodoList-总结"><a href="#TodoList-总结" class="headerlink" title="TodoList 总结"></a>TodoList 总结</h1><blockquote>
+<p>首先提醒自己时刻记住代码规范，从属关系，缩进整明白，不然自己和别人都看着烦</p>
+</blockquote>
+<h2 id="一、Dom-动态创建删除元素"><a href="#一、Dom-动态创建删除元素" class="headerlink" title="一、Dom~动态创建删除元素"></a>一、Dom~动态创建删除元素</h2><p>想实现这样一个功能：双击列表项能够实现对列表项的改动</p>
+<p>思路：双击后，在列表项li里面创建一个input输入框，将列表项原本的文本内容赋给input作为默认值,再将列表项文本内容删除。用户修改input输入框里面的内容（获取焦点），用户修改完毕后（失去焦点）将input的value值赋给列表项，再删除input</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oldhtml = element.firstChild.nodeValue;<span class="comment">//获取元素之前的内容</span></span><br><span class="line"><span class="keyword">let</span> newobj = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>);<span class="comment">//创建一个input元素</span></span><br><span class="line">newobj.type = <span class="string">&#x27;text&#x27;</span>;</span><br><span class="line">newobj.value = oldhtml;</span><br><span class="line">element.firstChild.nodeValue = <span class="string">&#x27;&#x27;</span>;<span class="comment">//设置元素内容为空</span></span><br><span class="line">element.appendChild(newobj);</span><br><span class="line"><span class="comment">//若报错Cannot read property &#x27;appendChild&#x27; of null。一般是获取的节点不存在</span></span><br><span class="line">newobj.focus()<span class="comment">//获取焦点</span></span><br><span class="line">newobj.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">element.firstChild.nodeValue = newobj.value;</span><br><span class="line">newobj.remove();</span><br></pre></td></tr></table></figure>
+
+<p>注：想让效果更好的话，要设置input的样式，另外频繁操作dom,似乎似乎会对cpu造成较大压力，具体较好的解决方法，带我学了新知识再来解决！</p>
+<h2 id="二、空格，null-undefine"><a href="#二、空格，null-undefine" class="headerlink" title="二、空格，null ,undefine"></a>二、空格，null ,undefine</h2><p>我需要判断input输入框输入的内容，来决定是否允许提交，用空格<code>todo.value ===&#39;&#39;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span>===<span class="literal">undefined</span> <span class="comment">//false</span></span><br><span class="line"><span class="literal">null</span>==<span class="literal">undefined</span><span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>)<span class="comment">//0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>)<span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>null表示一个值被定义了，是空值</p>
+<p>undefined表示缺少值，还未定义</p>
+<h2 id="三、清空"><a href="#三、清空" class="headerlink" title="三、清空"></a>三、清空</h2><p>我要实现一个清空列表项的功能</p>
+<h4 id="思路1"><a href="#思路1" class="headerlink" title="思路1."></a>思路1.</h4><blockquote>
+<p>list.remove();//<em>这种方法不好，直接删除了ol,再重新增加li就没地方增加了，应为ol都没有了</em></p>
+</blockquote>
+<h4 id="思路2"><a href="#思路2" class="headerlink" title="思路2."></a>思路2.</h4><p><em>循环删除li，也不好，因为删除一个后子节点们会重新排列，最后不能实现清空的功能</em></p>
+<h4 id="思路3"><a href="#思路3" class="headerlink" title="思路3."></a>思路3.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(list.hasChildNodes())&#123;</span><br><span class="line">    list.removeChild(list.firstChild);</span><br><span class="line">&#125;<span class="comment">//这是在网上看到的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、错误"><a href="#四、错误" class="headerlink" title="四、错误"></a>四、错误</h2><p>在写代码的过程中经常会遇到类似于<em>Cannot read property ‘appendChild’ of null</em>这样的错误，一般就是没有找到节点啥的，在这里，温习一下，页面渲染的顺序</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/28/TodoList%20%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-实践问题之CSS布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -188,68 +256,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/11/26/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的y第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/08/%E6%88%91%E7%9A%84y%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的y第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/08/%E6%88%91%E7%9A%84y%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-10-08T01:38:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/08/%E6%88%91%E7%9A%84y%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
