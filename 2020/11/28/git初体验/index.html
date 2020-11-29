@@ -16,7 +16,7 @@
 <meta property="og:description" content="git初体验1.常用git命令git branch 查看本地所有分支 git init 本地初始化 git status 查看当前状态 git commit 提交 git diff 比较文件 git push origin master 将文件给推到服务器上  git rm 文件名(包括路径) 从git中删除指定文件 git clone git:&#x2F;&#x2F;github.com&#x2F;schacon&#x2F;grit.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-28T12:28:12.530Z">
-<meta property="article:modified_time" content="2020-11-28T12:26:07.467Z">
+<meta property="article:modified_time" content="2020-11-29T06:13:04.881Z">
 <meta property="article:author" content="林得平">
 <meta name="twitter:card" content="summary">
   
@@ -60,6 +60,10 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -117,6 +121,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -134,12 +142,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 25%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,15 +186,28 @@
 <p>或者</p>
 <p>git config –global user.name 名字</p>
 <p>git config –global user.email 邮箱</p>
-<p>3.git clone 地址</p>
-<p>4.git push 地址 分支</p>
-<p><strong>另外给我记好了，部署博客的时候在blog根目录下面敲下面这些命令</strong></p>
-<ul>
-<li><p>hexo clean</p>
+<p>3.git clone 分支地址</p>
+<p>4.git add 文件名或目录</p>
+<p>5.git commit -m “description”  文件名或者目录</p>
+<p>6.git branch 分支名 创建分支</p>
+<p>7.git checkout 分支名   转换到该分支</p>
+<p>8.git pull –rebase origin 分支</p>
+<p>8.git push 地址 分支 提交</p>
+<blockquote>
+<p>注意一下git clone和git pull</p>
+<p>git clone 是在本地没有版本库的时候，从远程克隆整个版本库到本地的</p>
+<p>git pull 是在本地有版本库的基础上，从远程获取最新的commit数据，并且merge(合并)到本地</p>
+<p>每次push之前都pull一下，保证push到远程仓库时没有版本冲突</p>
+</blockquote>
+<h2 id="3-遇到的错误"><a href="#3-遇到的错误" class="headerlink" title="3.遇到的错误"></a>3.遇到的错误</h2><h4 id="1-failed-to-push-some-refs-to"><a href="#1-failed-to-push-some-refs-to" class="headerlink" title="1.failed to push some refs to"></a>1.failed to push some refs to</h4><p><strong>出现错误的主要原因是github中的README.md文件不在本地代码目录中</strong></p>
+<p>git pull –rebase origin master</p>
+<h4 id="2-does-not-have-a-commit-checked-out"><a href="#2-does-not-have-a-commit-checked-out" class="headerlink" title="2.does not have a commit checked out"></a>2.does not have a commit checked out</h4><p>出现的情况就是，你在一个github仓库里面，放进来一个文件夹，但是文件夹里面还有文件夹，而且还没有提交过的。只需要进入到文件夹git add+git commit一下就好</p>
+<h2 id="另外给我记好了，部署博客的时候在blog根目录下面敲下面这些命令"><a href="#另外给我记好了，部署博客的时候在blog根目录下面敲下面这些命令" class="headerlink" title="另外给我记好了，部署博客的时候在blog根目录下面敲下面这些命令"></a>另外给我记好了，部署博客的时候在blog根目录下面敲下面这些命令</h2><ul>
+<li><p>hexo clean 清除缓存文件db.json和已生成的public静态文件</p>
 </li>
-<li><p>hexo g</p>
+<li><p>hexo g 生成网站静态文件到默认设置的public文件夹</p>
 </li>
-<li><p>hexo d</p>
+<li><p>hexo d  自动生成网站静态文件，并部署到设定的仓库</p>
 </li>
 </ul>
 
