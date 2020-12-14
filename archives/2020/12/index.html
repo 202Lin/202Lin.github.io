@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>小林的个人博客</title>
+  <title>Archives: 2020/12 | 小林的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实践问题之CSS布局一、浮动1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法： 给顺序倒转的元素添加一个父元素，使得父元素向所需方向浮动，子元素反方向浮动  二、垂直居中的集中常见方法1.123display: table-cell;&#x2F;*让标签元素以表格单元格的形式呈现，使得元素类似于td标签*&#x2F;vertical-align: m">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="小林的个人博客">
-<meta property="og:url" content="http://example.com/2020/11/26/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:url" content="http://example.com/archives/2020/12/index.html">
 <meta property="og:site_name" content="小林的个人博客">
-<meta property="og:description" content="实践问题之CSS布局一、浮动1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法： 给顺序倒转的元素添加一个父元素，使得父元素向所需方向浮动，子元素反方向浮动  二、垂直居中的集中常见方法1.123display: table-cell;&#x2F;*让标签元素以表格单元格的形式呈现，使得元素类似于td标签*&#x2F;vertical-align: m">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-26T10:40:29.180Z">
-<meta property="article:modified_time" content="2020-11-26T10:40:29.860Z">
 <meta property="article:author" content="林得平">
 <meta name="twitter:card" content="summary">
   
@@ -166,162 +162,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-实践问题之CSS布局" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-    <div class="article-entry" itemprop="articleBody">
+    
       
-        <h1 id="实践问题之CSS布局"><a href="#实践问题之CSS布局" class="headerlink" title="实践问题之CSS布局"></a>实践问题之CSS布局</h1><h2 id="一、浮动"><a href="#一、浮动" class="headerlink" title="一、浮动"></a>一、浮动</h2><h3 id="1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法："><a href="#1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法：" class="headerlink" title="1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法："></a>1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法：</h3><blockquote>
-<p>给顺序倒转的元素添加一个父元素，使得父元素向所需方向浮动，子元素反方向浮动</p>
-</blockquote>
-<h2 id="二、垂直居中的集中常见方法"><a href="#二、垂直居中的集中常见方法" class="headerlink" title="二、垂直居中的集中常见方法"></a>二、垂直居中的集中常见方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span>;<span class="comment">/*让标签元素以表格单元格的形式呈现，使得元素类似于td标签*/</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;<span class="comment">/*可以理解为将元素放置在父元素的中部*/</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;<span class="comment">/*设置文本对齐的方式，对行内元素也起作用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-开启定位"><a href="#2-开启定位" class="headerlink" title="2.开启定位"></a>2.开启定位</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;<span class="comment">/*给父元素开启相对定位，给子元素开启绝对定位，设置偏移量*/</span></span><br><span class="line"><span class="selector-tag">top</span>: 25%;</span><br><span class="line"><span class="selector-tag">left</span>: 25%;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-设置偏移量为0"><a href="#3-设置偏移量为0" class="headerlink" title="3.设置偏移量为0"></a>3.设置偏移量为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;&#x2F;*有点 神奇，也是不知道为什么*&#x2F;</span><br><span class="line">margin: auto;</span><br><span class="line">top: 0;</span><br><span class="line">left: 0;</span><br><span class="line">right: 0;</span><br><span class="line">bottom: 0;  </span><br></pre></td></tr></table></figure>
-
-<h3 id="4-flex"><a href="#4-flex" class="headerlink" title="4.flex"></a>4.flex</h3><blockquote>
-<p>但是flex布局和浮动不能同时作用一个对象，自己还不熟悉flex,就先不用</p>
-</blockquote>
-<h2 id="二、定位（position）"><a href="#二、定位（position）" class="headerlink" title="二、定位（position）"></a>二、定位（position）</h2><h3 id="1-绝对定位（absolute）"><a href="#1-绝对定位（absolute）" class="headerlink" title="1.绝对定位（absolute）"></a>1.绝对定位（absolute）</h3><blockquote>
-<p>绝对定位是相对于元素最近的已定位（开启了定位）的祖先元素，如果没有已经定位的祖先元素，则位置相对于最初的包含块（html）。脱离了文档流，原来的位置就是空的了，下面的元素就会来占据位置</p>
-</blockquote>
-<h3 id="2-相对定位-relative"><a href="#2-相对定位-relative" class="headerlink" title="2.相对定位(relative)"></a>2.相对定位(relative)</h3><blockquote>
-<p>相对于元素在文档中的初始位置，但是无论是否移动，元素都会占据原来的位置(元素仍然处于文档流中)</p>
-</blockquote>
-
       
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/12/CC%E5%9F%B9%E8%AE%AD%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" class="archive-article-date">
+  	<time datetime="2020-12-11T16:10:27.002Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-12</time>
+</a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/26/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2020/11/28/TodoList%20%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/06/Flex%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-12-06T11:42:03.652Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-06</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/05/%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-12-05T01:54:18.844Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
+</a>
+        </div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/03/Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-12-03T04:04:18.186Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
+</a>
+        </div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -344,8 +284,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
