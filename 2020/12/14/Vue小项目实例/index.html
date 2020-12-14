@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>小林的个人博客</title>
+  <title>Vue小项目实例 | 小林的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实践问题之CSS布局">
+  <meta name="description" content="Vue小项目实例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小林的个人博客">
-<meta property="og:url" content="http://example.com/2020/11/27/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:title" content="Vue小项目实例">
+<meta property="og:url" content="http://example.com/2020/12/14/Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="小林的个人博客">
-<meta property="og:description" content="实践问题之CSS布局">
+<meta property="og:description" content="Vue小项目实例">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-27T12:02:02.581Z">
-<meta property="article:modified_time" content="2020-12-14T12:33:27.406Z">
+<meta property="article:published_time" content="2020-12-14T13:04:21.000Z">
+<meta property="article:modified_time" content="2020-12-14T13:20:11.236Z">
 <meta property="article:author" content="林得平">
+<meta property="article:tag" content="prictice">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小林的个人博客" type="application/atom+xml">
@@ -148,31 +149,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-实践问题之CSS布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue小项目实例" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue小项目实例
+    </h1>
+  
+
+        
+        <a href="/2020/12/14/Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-12-14T13:04:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-14</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="实践问题之CSS布局"><a href="#实践问题之CSS布局" class="headerlink" title="实践问题之CSS布局"></a>实践问题之CSS布局</h1><a id="more"></a>
-<h2 id="一、浮动"><a href="#一、浮动" class="headerlink" title="一、浮动"></a>一、浮动</h2><h3 id="1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法："><a href="#1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法：" class="headerlink" title="1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法："></a>1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法：</h3><blockquote>
-<p>给顺序倒转的元素添加一个父元素，使得父元素向所需方向浮动，子元素反方向浮动</p>
-</blockquote>
-<h2 id="二、垂直居中的集中常见方法"><a href="#二、垂直居中的集中常见方法" class="headerlink" title="二、垂直居中的集中常见方法"></a>二、垂直居中的集中常见方法</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span>;<span class="comment">/*让标签元素以表格单元格的形式呈现，使得元素类似于td标签*/</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;<span class="comment">/*可以理解为将元素放置在父元素的中部*/</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;<span class="comment">/*设置文本对齐的方式，对行内元素也起作用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-开启定位"><a href="#2-开启定位" class="headerlink" title="2.开启定位"></a>2.开启定位</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;<span class="comment">/*给父元素开启相对定位，给子元素开启绝对定位，设置偏移量*/</span></span><br><span class="line"><span class="selector-tag">top</span>: 25%;</span><br><span class="line"><span class="selector-tag">left</span>: 25%;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-设置偏移量为0"><a href="#3-设置偏移量为0" class="headerlink" title="3.设置偏移量为0"></a>3.设置偏移量为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;&#x2F;*有点 神奇，也是不知道为什么*&#x2F;</span><br><span class="line">margin: auto;</span><br><span class="line">top: 0;</span><br><span class="line">left: 0;</span><br><span class="line">right: 0;</span><br><span class="line">bottom: 0;  </span><br></pre></td></tr></table></figure>
-
-<h3 id="4-flex"><a href="#4-flex" class="headerlink" title="4.flex"></a>4.flex</h3><blockquote>
-<p>但是flex布局和浮动不能同时作用一个对象，自己还不熟悉flex,就先不用</p>
-</blockquote>
-<h2 id="二、定位（position）"><a href="#二、定位（position）" class="headerlink" title="二、定位（position）"></a>二、定位（position）</h2><h3 id="1-绝对定位（absolute）"><a href="#1-绝对定位（absolute）" class="headerlink" title="1.绝对定位（absolute）"></a>1.绝对定位（absolute）</h3><blockquote>
-<p>绝对定位是相对于元素最近的已定位（开启了定位）的祖先元素，如果没有已经定位的祖先元素，则位置相对于最初的包含块（html）。脱离了文档流，原来的位置就是空的了，下面的元素就会来占据位置</p>
-</blockquote>
-<h3 id="2-相对定位-relative"><a href="#2-相对定位-relative" class="headerlink" title="2.相对定位(relative)"></a>2.相对定位(relative)</h3><blockquote>
-<p>相对于元素在文档中的初始位置，但是无论是否移动，元素都会占据原来的位置(元素仍然处于文档流中)</p>
-</blockquote>
-<h2 id="三、边框"><a href="#三、边框" class="headerlink" title="三、边框"></a>三、边框</h2><p>我今天给table设置边框的时候<code>      border: 1px *solid* #e9e9e9;</code>居然在中间加逗号，忘记是空格，然后样式就是没效果，排查了好久，要被自己蠢哭了~</p>
+        <h1 id="Vue小项目实例"><a href="#Vue小项目实例" class="headerlink" title="Vue小项目实例"></a>Vue小项目实例</h1><a id="more"></a>
+<h2 id="1-对列表元素实现，点击哪一个就将该列表项变红"><a href="#1-对列表元素实现，点击哪一个就将该列表项变红" class="headerlink" title="1.对列表元素实现，点击哪一个就将该列表项变红"></a>1.对列表元素实现，点击哪一个就将该列表项变红</h2><p>完整代码：<code>&quot;E:\笔记\resource\item1.html&quot;</code></p>
+<p><strong>觉着比较巧妙的是，利用了一个<code>currentactive</code>来记录状态，根据事件修改它的状态来实现功能</strong></p>
+<h2 id="2-类似于购物车的功能"><a href="#2-类似于购物车的功能" class="headerlink" title="2.类似于购物车的功能"></a>2.类似于购物车的功能</h2><p>完整代码：<code>&quot;E:\笔记\resource\item2.html&quot;</code></p>
 
       
 
@@ -207,6 +207,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">prictice</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/27/%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/14/Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,15 +282,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/28/TodoList%20%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/12/14/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          ES6学习笔记
         
       </div>
     </a>
   
+  
+    <a href="/2020/12/14/Vue%E7%89%88%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue版课表查询</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -304,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E4%B9%8BCSS%E5%B8%83%E5%B1%80"><span class="toc-number">1.</span> <span class="toc-text">实践问题之CSS布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text">一、浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E7%BB%99%E5%88%97%E8%A1%A8%E9%A1%B9%E8%AE%BE%E7%BD%AE%E6%B5%AE%E5%8A%A8%EF%BC%8C%E6%83%B3%E8%AE%A9%E4%BB%96%E4%BB%AC%E5%90%91%E5%8F%B3%E6%8E%92%E5%88%97%EF%BC%8C%E4%BD%86%E6%98%AF%E9%A1%BA%E5%BA%8F%E5%8F%8D%E4%BA%86%E3%80%82%E5%86%8D%E6%9D%A5%E6%94%B9%E5%8F%98%E6%A0%87%E7%AD%BE%E6%8E%92%E5%88%97%E9%A1%BA%E5%BA%8F%E5%B0%B1%E4%BC%9A%E5%BE%88%E9%BA%BB%E7%83%A6%EF%BC%8C%E7%9C%8B%E8%B5%B7%E6%9D%A5%E4%B9%9F%E6%AF%94%E8%BE%83%E8%A0%A2%EF%BC%8C%E6%90%9C%E4%BA%86%E4%B8%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">1、给列表项设置浮动，想让他们向右排列，但是顺序反了。再来改变标签排列顺序就会很麻烦，看起来也比较蠢，搜了下解决方法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E9%9B%86%E4%B8%AD%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">二、垂直居中的集中常见方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%80%E5%90%AF%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.开启定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%BE%E7%BD%AE%E5%81%8F%E7%A7%BB%E9%87%8F%E4%B8%BA0"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.设置偏移量为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-flex"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.flex</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9A%E4%BD%8D%EF%BC%88position%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">二、定位（position）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%EF%BC%88absolute%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.绝对定位（absolute）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D-relative"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.相对定位(relative)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BE%B9%E6%A1%86"><span class="toc-number">1.4.</span> <span class="toc-text">三、边框</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">Vue小项目实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AF%B9%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%E5%AE%9E%E7%8E%B0%EF%BC%8C%E7%82%B9%E5%87%BB%E5%93%AA%E4%B8%80%E4%B8%AA%E5%B0%B1%E5%B0%86%E8%AF%A5%E5%88%97%E8%A1%A8%E9%A1%B9%E5%8F%98%E7%BA%A2"><span class="toc-number">1.1.</span> <span class="toc-text">1.对列表元素实现，点击哪一个就将该列表项变红</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%B1%BB%E4%BC%BC%E4%BA%8E%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.</span> <span class="toc-text">2.类似于购物车的功能</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -414,6 +430,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">fundation</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">prictice</a>
