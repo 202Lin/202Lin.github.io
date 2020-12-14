@@ -81,7 +81,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="weixin" target="_blank" href="/assets/wechatlogo.jpg" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/wechat.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -120,7 +120,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="weixin" target="_blank" href="/assets/wechatlogo.jpg" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/wechat.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
@@ -449,72 +449,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/12/03/Vue%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E4%BE%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ES6学习笔记"><a href="#ES6学习笔记" class="headerlink" title="ES6学习笔记"></a>ES6学习笔记</h1><h2 id="一、var-let-const"><a href="#一、var-let-const" class="headerlink" title="一、var let const"></a>一、var let const</h2><h4 id="1-var-没有块级作用域"><a href="#1-var-没有块级作用域" class="headerlink" title="1.var:没有块级作用域"></a>1.var:没有块级作用域</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;button&#x27;</span>);<span class="comment">//一共5个按钮</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">   btns[i].addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;第&quot;</span>+i+<span class="string">&quot;按钮被点击！&quot;</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;<span class="comment">//点击第一个按钮，输出“第5个按钮被点击”</span></span><br></pre></td></tr></table></figure>
-
-<p>是因为在for循环执行完，事件绑定也绑定完了，但是函数没被立即执行，当函数触发时，i已经+到5了</p>
-<p>以前学的用闭包可以解决：(es5之前，if和for都没有块级作用域的概念，但函数是有作用域的，所以经常借助函数的作用域来解决应用外面变量的问题)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;btns[i].addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">&quot;第&quot;</span>+i+<span class="string">&quot;按钮被点击！&quot;</span>);</span><br><span class="line">       &#125;)</span><br><span class="line">    &#125;)(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//按我的理解，这里就是创建了5个立即执行函数，每个函数对应的i不同，也互不干扰</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-es6中let作用域的（if和for）"><a href="#2-es6中let作用域的（if和for）" class="headerlink" title="2.es6中let作用域的（if和for）"></a>2.es6中let作用域的（if和for）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ar btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;button&#x27;</span>);<span class="comment">//一共5个按钮</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">   btns[i].addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;第&quot;</span>+i+<span class="string">&quot;按钮被点击！&quot;</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;<span class="comment">//只需要将for循环里面的var改成let就可以了</span></span><br></pre></td></tr></table></figure>
-
-<p>用var就相当于在for循环外面定义了一个<code>var i=0</code>,5次事件绑定的回调函数共用一个i，用let的话，i只在自己的作用域内有效，一次++循环过去了，就换了个作用域，自己就不起作用了，当然i++就会有一个新的i对应这个作用域。</p>
-<h4 id="3-const-建议使用const-除非该标识符需要改变就用let"><a href="#3-const-建议使用const-除非该标识符需要改变就用let" class="headerlink" title="3.const 建议使用const,除非该标识符需要改变就用let"></a>3.const 建议使用const,除非该标识符需要改变就用let</h4><h5 id="1-一旦给const修饰的标识符赋值之后，不能再修改"><a href="#1-一旦给const修饰的标识符赋值之后，不能再修改" class="headerlink" title="(1)一旦给const修饰的标识符赋值之后，不能再修改"></a>(1)一旦给const修饰的标识符赋值之后，不能再修改</h5><p><code>const ldp = &#39;大帅比&#39;;  ldp = &#39;小丑比&#39;</code></p>
-<p><img src="E:\笔记\picture\image-20201201163324941.png" alt="image-20201201163324941">给报错了</p>
-<h5 id="2-常亮的含义是指定的对象不能修改（指针不能修改），但是可以改变对象内部的属性"><a href="#2-常亮的含义是指定的对象不能修改（指针不能修改），但是可以改变对象内部的属性" class="headerlink" title="(2)常亮的含义是指定的对象不能修改（指针不能修改），但是可以改变对象内部的属性"></a>(2)常亮的含义是指定的对象不能修改（指针不能修改），但是可以改变对象内部的属性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">name</span>: <span class="string">&#x27;ldp&#x27;</span>,<span class="attr">age</span>: <span class="number">19</span>, <span class="attr">height</span>:<span class="number">175</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br><span class="line">obj.age = <span class="number">22</span></span><br><span class="line">obj.name = <span class="string">&#x27;lf&#x27;</span></span><br><span class="line">obj.height = <span class="number">178</span><span class="comment">//        obj.wight = 70;obj.work = &#x27;student&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="E:\笔记\picture\image-20201201163855379.png" alt="image-20201201163855379">可以被改变</p>
-<p><img src="E:\笔记\picture\image-20201201164337198.png" alt="image-20201201164337198">添加属性也可以</p>
-<p><code>const obj = &#123;name: &#39;ldp&#39;,age: 19, height:175 &#125;; obj = &#123;name:&#39;yiqi&#39;&#125;这样子就是不可以</code></p>
-<p>理解：obj对象储存的是各个属性的地址位置，这些地址就存了各个属性值，我们改变属性的值，没有改变地址，同样，增加属性，也没有改变地址位置，但是删除一些属性就是改了就是改了。</p>
-<h5 id="字面量增强"><a href="#字面量增强" class="headerlink" title="字面量增强"></a>字面量增强</h5><p><code>const name = &#39;小可爱&#39;;const age = 19;const obj = &#123;name,age&#125;;</code></p>
-<p>const obj = {fun() {},fun2() {}}这是ES6的函数增强写法，在对象里面放函数，直接这么写就可以了`</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/30/ES6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
