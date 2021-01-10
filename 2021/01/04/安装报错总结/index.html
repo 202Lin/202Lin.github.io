@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>小林的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在学习的路上一直前进着，记录学习，记录成长">
-<meta property="og:type" content="website">
+  <meta name="description" content="安装报错总结一.npm ERR! errno ETIMEDOUT在学习webpack时安装，执行命令：npm install &amp;#x66;&amp;#x69;&amp;#108;&amp;#x65;&amp;#45;&amp;#108;&amp;#111;&amp;#97;&amp;#x64;&amp;#101;&amp;#x72;&amp;#64;&amp;#51;&amp;#46;&amp;#48;&amp;#46;&amp;#49; –save-dev，安装file-loader时报错  npm ERR! errno">
+<meta property="og:type" content="article">
 <meta property="og:title" content="小林的个人博客">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2021/01/04/%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="小林的个人博客">
-<meta property="og:description" content="在学习的路上一直前进着，记录学习，记录成长">
+<meta property="og:description" content="安装报错总结一.npm ERR! errno ETIMEDOUT在学习webpack时安装，执行命令：npm install &amp;#x66;&amp;#x69;&amp;#108;&amp;#x65;&amp;#45;&amp;#108;&amp;#111;&amp;#97;&amp;#x64;&amp;#101;&amp;#x72;&amp;#64;&amp;#51;&amp;#46;&amp;#48;&amp;#46;&amp;#49; –save-dev，安装file-loader时报错  npm ERR! errno">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-04T07:16:58.234Z">
+<meta property="article:modified_time" content="2021-01-04T07:16:58.235Z">
 <meta property="article:author" content="林得平">
 <meta name="twitter:card" content="summary">
   
@@ -146,63 +148,122 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-课表查询项目中遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-安装报错总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/14/%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">课表查询项目中遇到的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/14/%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-14</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="课表查询项目中遇到的问题"><a href="#课表查询项目中遇到的问题" class="headerlink" title="课表查询项目中遇到的问题"></a>课表查询项目中遇到的问题</h1>
-        
-          <a class="article-more-a" href="/2020/12/14/%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
-        
+        <h2 id="安装报错总结"><a href="#安装报错总结" class="headerlink" title="安装报错总结"></a>安装报错总结</h2><h3 id="一-npm-ERR-errno-ETIMEDOUT"><a href="#一-npm-ERR-errno-ETIMEDOUT" class="headerlink" title="一.npm ERR! errno ETIMEDOUT"></a>一.npm ERR! errno ETIMEDOUT</h3><p>在学习webpack时安装，执行命令：npm install <a href="mailto:&#x66;&#x69;&#108;&#x65;&#45;&#108;&#111;&#97;&#x64;&#101;&#x72;&#64;&#51;&#46;&#48;&#46;&#49;">&#x66;&#x69;&#108;&#x65;&#45;&#108;&#111;&#97;&#x64;&#101;&#x72;&#64;&#51;&#46;&#48;&#46;&#49;</a> –save-dev，安装file-loader时报错</p>
+<blockquote>
+<p>npm ERR! errno ETIMEDOUT<br>npm ERR! network request to <a target="_blank" rel="noopener" href="https://registry.npmjs.org/file-loader">https://registry.npmjs.org/file-loader</a> failed, reason: connect ETIMEDOUT 104.16.23.35:443<br>npm ERR! network This is a problem related to network connectivity.</p>
+</blockquote>
+<p>百度查了下，用了淘宝镜像，成功解决</p>
+<h4 id="1-npm-install-g-cnpm-–registry-https-registry-npm-taobao-org"><a href="#1-npm-install-g-cnpm-–registry-https-registry-npm-taobao-org" class="headerlink" title="1.npm install -g cnpm –registry=https://registry.npm.taobao.org"></a>1.npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></h4><h4 id="2-cnpm-install-102-x69-108-x65-x2d-x6c-111-x61-x64-101-x72-64-x33-x2e-48-x2e-x31-–save-dev"><a href="#2-cnpm-install-102-x69-108-x65-x2d-x6c-111-x61-x64-101-x72-64-x33-x2e-48-x2e-x31-–save-dev" class="headerlink" title="2.cnpm install &#102;&#x69;&#108;&#x65;&#x2d;&#x6c;&#111;&#x61;&#x64;&#101;&#x72;&#64;&#x33;&#x2e;&#48;&#x2e;&#x31; –save-dev"></a>2.cnpm install <a href="mailto:&#102;&#x69;&#108;&#x65;&#x2d;&#x6c;&#111;&#x61;&#x64;&#101;&#x72;&#64;&#x33;&#x2e;&#48;&#x2e;&#x31;">&#102;&#x69;&#108;&#x65;&#x2d;&#x6c;&#111;&#x61;&#x64;&#101;&#x72;&#64;&#x33;&#x2e;&#48;&#x2e;&#x31;</a> –save-dev</h4>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/WechatPay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">prictice</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/14/%E8%AF%BE%E8%A1%A8%E6%9F%A5%E8%AF%A2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://202lin.github.io/021/01/04/%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/20/%E4%B8%80%E4%BA%9B%E9%9B%B6%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -217,175 +278,34 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CC培训学习心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/14/CC%E5%9F%B9%E8%AE%AD%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/">大前端学习</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/14/CC%E5%9F%B9%E8%AE%AD%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2020-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CC学习心得"><a href="#CC学习心得" class="headerlink" title="CC学习心得"></a>CC学习心得</h1>
-        
-          <a class="article-more-a" href="/2020/12/14/CC%E5%9F%B9%E8%AE%AD%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/14/CC%E5%9F%B9%E8%AE%AD%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">安装报错总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-npm-ERR-errno-ETIMEDOUT"><span class="toc-number">1.1.</span> <span class="toc-text">一.npm ERR! errno ETIMEDOUT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-npm-install-g-cnpm-%E2%80%93registry-https-registry-npm-taobao-org"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.npm install -g cnpm –registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-cnpm-install-102-x69-108-x65-x2d-x6c-111-x61-x64-101-x72-64-x33-x2e-48-x2e-x31-%E2%80%93save-dev"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.cnpm install &amp;#102;&amp;#x69;&amp;#108;&amp;#x65;&amp;#x2d;&amp;#x6c;&amp;#111;&amp;#x61;&amp;#x64;&amp;#101;&amp;#x72;&amp;#64;&amp;#x33;&amp;#x2e;&amp;#48;&amp;#x2e;&amp;#x31; –save-dev</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-VUEJS学习笔记（视频学习）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/14/VUEJS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%EF%BC%89/">大前端学习</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/14/VUEJS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="VUEJS学习笔记（视频学习）"><a href="#VUEJS学习笔记（视频学习）" class="headerlink" title="VUEJS学习笔记（视频学习）"></a>VUEJS学习笔记（视频学习）</h1>
-        
-          <a class="article-more-a" href="/2020/12/14/VUEJS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">fundation</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/14/VUEJS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -407,8 +327,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
